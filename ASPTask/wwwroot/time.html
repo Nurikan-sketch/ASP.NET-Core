@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+        function zero_first_format(value) {
+            if (value < 10)
+                value = '0' + value;
+            return value;
+        }
+
+        function time() {
+            var current_time = new Date();
+            var hours = zero_first_format(current_time.getHours());
+            var minutes = zero_first_format(current_time.getMinutes());
+            var seconds = zero_first_format(current_time.getSeconds());
+
+            return hours + ":" + minutes + ":" + seconds;
+        }
+
+        setInterval(function () { document.getElementById('time_display').innerHTML = time(); }, 100);
+
+    </script>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div>Час: <div style="display: inline;" id='time_display'></div> </div> <br>
+    <button onclick="window.location.href = 'https://localhost:7115';">На головну</button>
+</body>
+</html>

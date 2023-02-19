@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+        function zero_first_format(value) {
+            if (value < 10)
+                value = '0' + value;
+            return value;
+        }
+
+        function date() {
+            var current_date = new Date();
+            var day = zero_first_format(current_date.getDate());
+            var month = zero_first_format(current_date.getMonth()+1);
+            var year = current_date.getFullYear();
+
+            return day + "." + month + "." + year;
+        }
+
+        setInterval(function () { document.getElementById('date_display').innerHTML = date(); }, 100);
+
+    </script>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div>Дата: <div style="display: inline;" id='date_display'></div> </div> <br>
+    <button onclick="window.location.href = 'https://localhost:7115';">На головну</button>
+</body>
+</html>
